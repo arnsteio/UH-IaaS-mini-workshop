@@ -1,3 +1,7 @@
+# Attaching storage
+
+We want to make and attache the storage from the command line, not the gui.
+
 ## Installing openstack-cli
 You need openstack-client. Via OS or Python, one of these might work:
 ~~~
