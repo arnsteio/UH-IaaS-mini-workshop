@@ -10,7 +10,7 @@ Update the packages on the machine:
 sudo apt-get -y update
 ~~~
 
-We don't have a lot of space - and it is, regardless, better to have storage separately so we can attach it to and detach it from machines later. 
+with `lsblk` we see we don't have a lot of space - and it is, regardless, better to have storage separately so we can attach it to and detach it from machines later. 
 Machines are use-and-throwaway, storage is more permanent. 
 However, please make sure you have important things backed up!
 
