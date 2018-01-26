@@ -8,6 +8,8 @@ Something along these lines
 ~~~
 apt-get install openstack-cli
 
+apt install python3-openstackclient
+
 apt install python-dev python-pip
 pip install python-openstackclient
 
