@@ -8,7 +8,7 @@ ssh ubuntu@158.39.75.38
 
 You might need to include ssh keys explicitly:  `ssh -i $HOME/.ssh/id_rsa ubuntu@158.39.75.38`
 
-Update the packages on the machine:
+Update the packages on the machine after you have logged in:
 
 ~~~
 sudo apt-get -y update

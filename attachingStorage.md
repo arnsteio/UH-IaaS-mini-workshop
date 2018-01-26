@@ -3,18 +3,18 @@
 We want to make and attache the storage from the command line, not the gui.
 
 ## Installing openstack-cli
-You need openstack-client. Via OS or Python, one of these might work:
+You need to install openstack-client. YOu can either do it directly in the OS, or via Python.
+Something along these lines
 ~~~
 apt-get install openstack-cli
 
-pip install python-openstackclient
-
 apt install python-dev python-pip
+pip install python-openstackclient
 
 C:\>easy_install pip
 ~~~
 
-Check install: 
+Check the installation: 
 ~~~
 arnsteio@☠:~$ which openstack
 /usr/bin/openstack
@@ -55,6 +55,9 @@ arnsteio@☠:~$ openstack server list
 | c0b5b96d-7e5b-41a0-9309-aa78d54bf530 | 3D-build | ACTIVE | dualStack=158.39.75.38, 2001:700:2:8200::2059 |
 +--------------------------------------+----------+--------+-----------------------------------------------+
 ~~~
+
+We're good :-)
+
 ## Making storage
 ~~~
 arnsteio@☠:~$ openstack volume create --size 10 --description "Testvolum" mittTestVolum
