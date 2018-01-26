@@ -1,6 +1,6 @@
 # Initializing storage
 
-Find name with `lsblk`; 
+Find storage name with `lsblk`; 
 ~~~
 ubuntu@3d-build:~$ lsblk
 NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
@@ -32,8 +32,6 @@ Now we have a file system, but we cannot see it (try e.g. `df`). We must mount i
 
 ~~~
 ubuntu@3d-build:~$ sudo mkdir -p /testVolum
-ubuntu@3d-build:~$ mount /dev/sdb /testVolum
-mount: only root can do that
 ubuntu@3d-build:~$ sudo mount /dev/sdb /testVolum
 ubuntu@3d-build:~$ df
 Filesystem     1K-blocks    Used Available Use% Mounted on
@@ -51,3 +49,4 @@ Filesystem      Size  Used Avail Use% Mounted on
 /dev/sdb        9.8G   37M  9.3G   1% /testVolum
 ~~~
 
+Your file area is ready for use. 

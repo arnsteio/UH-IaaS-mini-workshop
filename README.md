@@ -1,6 +1,6 @@
 # UH-IaaS-mini-workshop
 
-TIme: 2 hours
+Time: 2 hours
  
 Prerequisites: Knowledge of the Linux command line, and SSH key pairs
 
