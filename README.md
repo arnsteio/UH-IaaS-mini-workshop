@@ -10,6 +10,7 @@ Prerequisites: Knowledge of the Linux command line, and SSH key pairs
 3. [Let's log in!](02-initialLogin.md)
 4. [Attaching storage](03-attachingStorage.md)
 5. [Initializing storage](04-initializingStorage.md)
+6. [Build machine via CLI](05-buildMachineViaCli.md)
 
 ## Web site:
 <https://arnsteio.github.io/UH-IaaS-mini-workshop/>
