@@ -8,6 +8,9 @@ User documentation is at <http://docs.uh-iaas.no/en/latest/>.
 Before you can use UH-IaaS, you need to do some setup. Please do this only once, if you have done it previously you should drop this step:
 
 1. Go to <https://access.uh-iaas.no/> and follow the steps described at <http://docs.uh-iaas.no/en/latest/login.html#first-time-login>.
+   Important - Copy and save the API password! 
+   The password for API access is generated and shown here. 
+   This is the only time that the API password is generated and shown to you.
 2. [Check on your local machine for your SSH keys](https://help.github.com/articles/checking-for-existing-ssh-keys/). 
 3. [SKIP THIS STEP IF YOU HAVE AN SSH KEY] If you do not have an SSH key, create a [new SSH key](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/). 
 4. Import your SSH key to openstack. Follow instructions at <http://docs.uh-iaas.no/en/latest/create-virtual-machine.html#setting-up-a-keypair>.
