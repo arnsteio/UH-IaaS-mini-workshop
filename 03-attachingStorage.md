@@ -8,10 +8,16 @@ Something along these lines
 ~~~
 apt-get install openstack-cli
 
+or
+
 apt install python3-openstackclient
+
+or
 
 apt install python-dev python-pip
 pip install python-openstackclient
+
+or
 
 C:\>easy_install pip
 ~~~
@@ -36,7 +42,7 @@ openstack 3.11.0
 arnsteio@☠:~$ cat keystone_rc.sh 
 export OS_USERNAME=arnstein.orten@geo.uio.no
 export OS_PROJECT_NAME=DEMO-arnstein.orten.geo.uio.no
-export OS_PASSWORD=<API-password-from.1st-login>
+export OS_PASSWORD=<API-password-from-1st-login>
 export OS_AUTH_URL=https://api.uh-iaas.no:5000/v3
 export OS_IDENTITY_API_VERSION=3
 export OS_USER_DOMAIN_NAME=dataporten
@@ -46,7 +52,7 @@ export OS_REGION_NAME=osl
 export OS_NO_CACHE=1
 ~~~
 
-Testing wether it works at all:
+Testing whether it works at all:
 
 ~~~
 arnsteio@☠:~$ . keystone_rc.sh 

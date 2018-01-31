@@ -1,7 +1,12 @@
 # UH-IaaS GUI use
 
-General documentation on openstack can be found [here](http://iaas.readthedocs.io/en/latest/).
-User documentation is at <http://docs.uh-iaas.no/en/latest/>.
+*General documentation* on openstack can be found at <http://iaas.readthedocs.io/en/latest/>.
+
+*User documentation* is at <http://docs.uh-iaas.no/en/latest/>.
+
+There is a *public chat room* where you can get help at <https://uhps.slack.com>.
+
+*Issues should be reported* via the GitHub project norcams/iaas: <https://github.com/norcams/iaas/issues>.
 
 ## Setup
 
@@ -16,6 +21,8 @@ Before you can use UH-IaaS, you need to do some setup. Please do this only once,
 4. Import your SSH key to openstack. Follow instructions at <http://docs.uh-iaas.no/en/latest/create-virtual-machine.html#setting-up-a-keypair>.
 5. Allow SSH and ICMP access. Follow instructions at <http://docs.uh-iaas.no/en/latest/create-virtual-machine.html#allowing-ssh-and-icmp-access>.
 5. Get familiar with [IaaS dashboard](http://docs.uh-iaas.no/en/latest/dashboard.html).
+
+Subsequent logins should go via <http://dashboard.uh-iaas.no/>.
 
 ## Building a machine using the GUI
 
