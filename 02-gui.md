@@ -33,14 +33,14 @@ We can now check if the machine is working.
 
 ## Doing this in CLI instead
 
-Documentation at <http://docs.uh-iaas.no/en/latest/create-virtual-machine.html#doing-the-same-with-cli>.
-In short:
+In short: 
+
+Verifying that we have nothing:
 
 	openstack server list
 	openstack keypair list
 	openstack security group list
 
-(we have nothing)
 
 Upload an ssh key:
 
@@ -49,15 +49,15 @@ Upload an ssh key:
 Create security group:
 
 	openstack security group create --description "Allow incoming SSH and ICMP" SSH_and_ICMP
-	openstack security group rule create --src-ip 0.0.0.0/0 --dst-port 22 --protocol tcp --ingress SSH_and_ICMP
-	openstack security group rule create --src-ip 0.0.0.0/0 --protocol icmp --ingress SSH_and_ICMP
+	openstack security group rule create --remote-ip 0.0.0.0/0 --dst-port 22 --protocol tcp --ingress SSH_and_ICMP
+	openstack security group rule create --remote-ip 0.0.0.0/0 --protocol icmp --ingress SSH_and_ICMP
 
 Getting the info we need; images, favours, networks
 
-	openstack image list
+	openstack image list | grep -v deactivated
 	openstack flavor list
 	openstack network list
 
 Making a server:
 
-	openstack server create --image "Fedora 25" --flavor m1.small --security-group SSH_and_ICMP --security-group default --key-name Dell_XPS15 --nic net-id=osl-public myserver
+	openstack server create --image "GOLD Fedora 27" --flavor m1.small --security-group SSH_and_ICMP --security-group default --key-name Dell_XPS15 --nic net-id=dab01c68-c25d-4051-ad5b-7b7b07f16f05 myTestServer
