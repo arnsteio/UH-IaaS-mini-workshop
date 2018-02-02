@@ -1,4 +1,4 @@
-# Attaching storage
+# CLI and attaching storage
 
 We want to make and attach the storage from the command line, not the gui.
 

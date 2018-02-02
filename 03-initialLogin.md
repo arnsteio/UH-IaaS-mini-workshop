@@ -1,7 +1,7 @@
 # Log in on the machine we just made
 
 The IP address of your instance can be found in your "instances" section.
-You log in as user "ubuntu":
+You log in as user "ubuntu" for ubuntu, "fedora" for fedora:
 ~~~
 ssh ubuntu@158.39.75.38
 ~~~
