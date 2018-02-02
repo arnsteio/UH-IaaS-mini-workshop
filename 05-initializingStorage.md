@@ -1,6 +1,6 @@
 # Initializing storage
 
-Find storage name with `lsblk`; 
+Find storage name either from the server with `lsblk`; 
 ~~~
 ubuntu@3d-build:~$ lsblk
 NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
@@ -11,7 +11,10 @@ sda       8:0    0   10G  0 disk
 sdb       8:16   0   10G  0 disk 
 ~~~
 
-The last line is the important one. Lets make a file system on that storage (important - do this ONLY ONCE!). 
+Or via `openstack volume list`.
+
+For `lsblk` the last line is the important one. 
+Lets make a file system on that storage (important - do this ONLY ONCE!). 
 
 ~~~
 ubuntu@3d-build:~$ sudo mkfs.ext4 /dev/sdb
@@ -50,3 +53,9 @@ Filesystem      Size  Used Avail Use% Mounted on
 ~~~
 
 Your file area is ready for use. 
+
+After unmounting, the file area can later be detached:
+
+	umount /testVolum
+
+	openstack server remove volume 3d-build mittTestVolum

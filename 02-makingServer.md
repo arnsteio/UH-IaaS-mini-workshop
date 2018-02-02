@@ -1,4 +1,4 @@
-# UH-IaaS GUI use
+# UH-IaaS documentation
 
 *General documentation* on openstack can be found at <http://iaas.readthedocs.io/en/latest/>.
 
@@ -31,7 +31,7 @@ Remember to tick "SSH and ICMP" in the Access & Security tab and choose the corr
 The IP address of your instance can be found in your "instances" section. 
 We can now check if the machine is working. 
 
-## Doing this in CLI instead
+## Building a machine using CLI
 
 In short: 
 
@@ -52,7 +52,7 @@ Create security group:
 	openstack security group rule create --remote-ip 0.0.0.0/0 --dst-port 22 --protocol tcp --ingress SSH_and_ICMP
 	openstack security group rule create --remote-ip 0.0.0.0/0 --protocol icmp --ingress SSH_and_ICMP
 
-Getting the info we need; images, favours, networks
+Getting the info we need; images, flavours, networks
 
 	openstack image list | grep -v deactivated
 	openstack flavor list
