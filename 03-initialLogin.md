@@ -1,6 +1,6 @@
 # Log in on the machine we just made
 
-The IP address of your instance can be found in your "instances" section.
+The IP address of your instance can be found in your "instances" section of the GUI, or via `openstack server list`.
 You log in as user "ubuntu" for ubuntu, "fedora" for fedora:
 ~~~
 ssh ubuntu@158.39.75.38
@@ -18,4 +18,3 @@ with `lsblk` we see we don't have a lot of space - and it is, regardless, better
 Machines are use-and-throwaway, storage is more permanent (although backup is still important!).
 
 Let's make some storage, and attach it. 
-But we'll do that from the command line, not the web gui.

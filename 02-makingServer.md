@@ -8,32 +8,90 @@ There is a *public chat room* where you can get help at <https://uhps.slack.com>
 
 *Issues should be reported* via the GitHub project norcams/iaas: <https://github.com/norcams/iaas/issues>.
 
-## Setup
+## API password
 
-Before you can use UH-IaaS, you need to do some setup. Please do this only once, if you have done it previously you should drop this step:
+Before you can use UH-IaaS, you need to do some setup.
+Go to <https://access.uh-iaas.no/> and follow the steps described at <http://docs.uh-iaas.no/en/latest/login.html#first-time-login>.
 
-1. Go to <https://access.uh-iaas.no/> and follow the steps described at <http://docs.uh-iaas.no/en/latest/login.html#first-time-login>.
-   Important - Copy and save the API password! 
-   The password for API access is generated and shown here. 
-   This is the only time that the API password is generated and shown to you.
-2. [Check on your local machine for your SSH keys](https://help.github.com/articles/checking-for-existing-ssh-keys/). 
-3. [SKIP THIS STEP IF YOU HAVE AN SSH KEY] If you do not have an SSH key, create a [new SSH key](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/). 
-4. Import your SSH key to openstack. Follow instructions at <http://docs.uh-iaas.no/en/latest/create-virtual-machine.html#setting-up-a-keypair>.
-5. Allow SSH and ICMP access. Follow instructions at <http://docs.uh-iaas.no/en/latest/create-virtual-machine.html#allowing-ssh-and-icmp-access>.
-5. Get familiar with [IaaS dashboard](http://docs.uh-iaas.no/en/latest/dashboard.html).
+	Important - Copy and save the API password! 
+   	The password for API access is generated and shown here. 
+   	This is the only time that the API password is generated and shown to you.
+
+## Initializing, and building a machine using the GUI
+
+1. [Check on your local machine for your SSH keys](https://help.github.com/articles/checking-for-existing-ssh-keys/). 
+2. [SKIP THIS STEP IF YOU HAVE AN SSH KEY] If you do not have an SSH key, create a [new SSH key](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/). 
+3. Import your SSH key to openstack. Follow instructions at <http://docs.uh-iaas.no/en/latest/create-virtual-machine.html#setting-up-a-keypair>.
+4. Allow SSH and ICMP access. Follow instructions at <http://docs.uh-iaas.no/en/latest/create-virtual-machine.html#allowing-ssh-and-icmp-access>.
+5. Go to <https://dashboard.uh-iaas.no/dashboard/project/instances/>, press `Launch instance` and build your machine.
+   Remember to tick "SSH and ICMP" in the Access & Security tab and choose the correct SSH keypair if you have more than one. 
 
 Subsequent logins should go via <http://dashboard.uh-iaas.no/>.
 
-## Building a machine using the GUI
-
-Go to <https://dashboard.uh-iaas.no/dashboard/project/instances/>, press `Launch instance` and build your machine.
-Remember to tick "SSH and ICMP" in the Access & Security tab and choose the correct SSH keypair if you have more than one. 
 The IP address of your instance can be found in your "instances" section. 
-We can now check if the machine is working. 
 
-## Building a machine using CLI
+## For CLI work: Installing openstack-cli
+You need to install openstack-client. You can either do it directly in the OS, or via Python.
+Something along these lines
+~~~
+apt-get install openstack-cli
 
-In short: 
+or
+
+apt install python3-openstackclient
+
+or
+
+apt install python-dev python-pip
+pip install python-openstackclient
+
+or
+
+C:\>easy_install pip
+~~~
+
+Check the installation: 
+~~~
+arnsteio@☠:~$ which openstack
+/usr/bin/openstack
+arnsteio@☠:~$ openstack --version
+openstack 2.3.1
+~~~
+2.3.1 is OK, but e.g. Ubuntu has a more recent Snap:
+~~~
+arnsteio@☠:~$ which openstack-cli 
+/snap/bin/openstack-cli
+arnsteio@☠:~$ openstack-cli --version
+openstack 3.11.0
+~~~
+
+## Make keystone.rc setup file:
+~~~
+arnsteio@☠:~$ cat keystone_rc.sh 
+export OS_USERNAME=arnstein.orten@geo.uio.no
+export OS_PROJECT_NAME=DEMO-arnstein.orten.geo.uio.no
+export OS_PASSWORD=<API-password-from-1st-login>
+export OS_AUTH_URL=https://api.uh-iaas.no:5000/v3
+export OS_IDENTITY_API_VERSION=3
+export OS_USER_DOMAIN_NAME=dataporten
+export OS_PROJECT_DOMAIN_NAME=dataporten
+#export OS_REGION_NAME=bgo
+export OS_REGION_NAME=osl
+export OS_NO_CACHE=1
+~~~
+
+Testing whether it works at all:
+~~~
+arnsteio@☠:~$ . keystone_rc.sh 
+arnsteio@☠:~$ openstack server list
+
+arnsteio@☠:~$
+~~~
+
+No error message - we're good :-)
+
+
+## Initializing, and building a machine using CLI
 
 Verifying that we have nothing:
 
@@ -61,3 +119,6 @@ Getting the info we need; images, flavours, networks
 Making a server:
 
 	openstack server create --image "GOLD Fedora 27" --flavor m1.small --security-group SSH_and_ICMP --security-group default --key-name Dell_XPS15 --nic net-id=dab01c68-c25d-4051-ad5b-7b7b07f16f05 myTestServer
+
+
+We can now check if the machine is working. 

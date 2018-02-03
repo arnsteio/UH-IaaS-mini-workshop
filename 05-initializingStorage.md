@@ -53,9 +53,13 @@ Filesystem      Size  Used Avail Use% Mounted on
 ~~~
 
 Your file area is ready for use. 
+Test via `touch /testVolum/GotDisk`.
 
 After unmounting, the file area can later be detached:
 
 	umount /testVolum
 
 	openstack server remove volume 3d-build mittTestVolum
+
+## Exercise: 
+Make a new machine (CLI or GUI) and mount this disk on that machine.
