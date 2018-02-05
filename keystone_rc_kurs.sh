@@ -1,0 +1,10 @@
+export OS_USERNAME=temp-user@uh-iaas.no
+export OS_PROJECT_NAME=uh-iaas-kurs
+export OS_PASSWORD=22HsayZEogzZiE1P
+export OS_AUTH_URL=https://api.uh-iaas.no:5000/v3
+export OS_IDENTITY_API_VERSION=3
+export OS_USER_DOMAIN_NAME=dataporten
+export OS_PROJECT_DOMAIN_NAME=dataporten
+#export OS_REGION_NAME=bgo
+export OS_REGION_NAME=osl
+export OS_NO_CACHE=1
