@@ -90,6 +90,7 @@ arnsteio@☠:~$
 
 No error message - we're good :-)
 
+`openstack limits show --absolute|grep max` can also be useful. 
 
 ## Initializing, and building a machine using CLI
 
