@@ -111,9 +111,7 @@ Create security group:
 	openstack security group rule create --remote-ip 0.0.0.0/0 --dst-port 22 --protocol tcp --ingress SSH_and_ICMP
 	openstack security group rule create --remote-ip 0.0.0.0/0 --protocol icmp --ingress SSH_and_ICMP
 
-If yopu have problems, 
-	openstack security group rule create --help
-might help.
+If yopu have problems, `openstack security group rule create --help`might help.
 
 Getting the info we need; images, flavours, networks
 
