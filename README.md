@@ -31,3 +31,6 @@ First run with this material (the CLI-only workshop) february -18:
   * Consider giving people a finished keystone.rc-file for a test project. Both these last two suggestions would somewhat defeat the point of the workshop, though.
   * Give people access to the Git repo immediately to save people time typing.
 * Survey results are in. Participants were happy, this is surprising to me as I though the workshop was heavy going.
+
+To address these issues I've begun adapting and adding back old material to make a new 3-hour workshop at <https://arnsteio.github.io/UH-IaaS-workshop/>.
+I'll still teach this 2-hour CLI-only workshop if people wish me to, but I prefer doing either 2-hour mainly CLI or 3-hour GUI and CLI. 
